@@ -1,0 +1,72 @@
+h1 {
+text-align: center;
+font-family: Helvetica, Times, serif;
+font-weight: bold;
+color: white;
+font-size: 40px;
+}
+
+h2 {
+font-size: 30px;
+color: white;
+}
+
+body {
+background-color: #0375b4;
+font-family: Helvetica, Times, serif;
+color: white;
+}
+
+#weatherButton {
+background-color: #262228;
+border: none;
+color: white;
+border-radius: 8px;
+padding: 10px 24px;
+}
+
+#searchButton {
+background-color: #262228;
+border: none;
+color: white;
+border-radius: 8px;
+padding: 10px 24px;
+}
+
+#cityField {
+border: 2px solid #262228;
+border-radius: 4px;
+background-color: #007849;
+color: white;
+}
+
+#searchStack {
+border: 2px solid #262228;
+border-radius: 4px;
+background-color: #007849;
+color: white;
+}
+
+#displayCity {
+border: 2px solid #262228;
+border-radius: 4px;
+background-color: #007849;
+color: white;
+}
+
+a:link {
+color: #262228;
+}
+
+a:hover {
+color: #e37222;
+}
+
+a:active {
+color: #e37222;
+}
+
+a:visited {
+color: orange;
+}
+ 

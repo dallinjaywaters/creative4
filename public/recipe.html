@@ -1,0 +1,84 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="stylesheets/rmain.css">
+    <script
+      src="http://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous">
+    </script>
+    <script>  	
+      $(document).ready(function() {
+	/*$("#searchButton").click(function(e){
+    	  var searched = "/getrecipe?q="+$("#searchFood").val();
+	  //var searched = $("#searchFood").val();
+    	  console.log(searched);
+    	  e.preventDefault();
+    	  $("#searchResults").text(searched);
+          //"https://json2jsonp.com/?url=
+    	  //var myurl = "http://food2fork.com/api/search?key=7885cf0b8fc9df1efbad8ed0c4b84154&q=" + searched //%callback=parsed_json;
+          var myurl = "https://json2jsonp.com/?url=http://food2fork.com/api/search?key=7885cf0b8fc9df1efbad8ed0c4b84154&q=" + searched+ "&callback=$.ajax";
+    	  console.log(myurl);
+	  $.ajax({
+	    //type : "GET",
+      	    url : myurl,
+      	    //crossDomain : true,
+	    dataType : "jsonp",
+      	    success : function(parsed_json) {
+              var recipeDisplay = "";
+              for (i = 0; i < 10; i++) {
+        	var title = parsed_json['recipes'][i]['title'];
+        	//var views = parsed_json['items'][i]['view_count'];
+        	var link = parsed_json['recipes'][i]['f2f_url'];
+        	recipeDisplay += "<ul>";
+        	recipeDisplay += "<li>Title: "+title;
+        	//recipeDisplay += "<li>Views: "+views;
+        	recipeDisplay += "<li>Link: "+"<a href=\""+link+"\">"+link+"</a>";
+        	recipeDisplay += "</ul>";
+	      }
+              console.log(recipeDisplay);
+              $("#searchResults").html(recipeDisplay);
+      	    }		
+	  });
+  	});*/
+	$("#searchButton").click(function(e) {
+          var recipeURL = "/getrecipe?q=" + $("#searchFood").val();
+          e.preventDefault();
+          $.ajax({
+            url : recipeURL,
+            dataType: "json",
+            success : function(parsed_json) {
+              console.log(parsed_json);
+              //var links = parsed_json['items'];
+              var recipeDisplay = "";
+	      for (i = 0; i < 10; i++) {
+                var title = parsed_json['recipes'][i]['title'];
+                //var views = parsed_json['items'][i]['view_count'];
+                var link = parsed_json['recipes'][i]['f2f_url'];
+                recipeDisplay += "<ul>";
+                recipeDisplay += "<li>Title: "+title;
+                //recipeDisplay += "<li>Views: "+views;
+                recipeDisplay += "<li>Link: "+"<a href=\""+link+"\">"+link+"</a>";
+                recipeDisplay += "</ul>";
+              }
+              $("#searchResults").html(recipeDisplay);
+            }
+      	  });
+	});
+      });
+    </script>
+  </head>
+  <body>
+
+    <div>
+      <h2>Search for a tasty recipe!</h2>
+      <form>
+        Enter an ingredient: <input type="text" id="searchFood" value=""><br>
+        <input id="searchButton" type="submit" value="Submit">
+      </form>
+      <p>Recipe results</p>
+      <div id="searchResults">No results</div>
+    </div>
+
+  </body>
+
+</html>
