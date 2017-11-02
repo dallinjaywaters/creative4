@@ -1,11 +1,4 @@
 nohup: ignoring input
-[0mGET / [32m200 [0m15.516 ms - 3080[0m
-[0mGET /rmain.css [33m404 [0m11.404 ms - 1066[0m
-in getrecipe
-[0mGET /getrecipe?q=garam%20masala [32m200 [0m1037.913 ms - -[0m
-[0mGET / [32m200 [0m1.992 ms - 3080[0m
-[0mGET /rmain.css [33m404 [0m2.162 ms - 1066[0m
-in getrecipe
-[0mGET /getrecipe?q=Strawberry [32m200 [0m817.549 ms - -[0m
-[0mGET / [32m200 [0m1.773 ms - 3092[0m
-[0mGET /stylesheets/rmain.css [32m200 [0m1.864 ms - 669[0m
+[0mGET / [32m200 [0m15.316 ms - 3233[0m
+[0mGET /stylesheets/rmain.css [32m200 [0m2.506 ms - 669[0m
+[0mGET /favicon.ico [33m404 [0m10.971 ms - 1166[0m

@@ -54,10 +54,12 @@
                 var title = parsed_json['recipes'][i]['title'];
                 //var views = parsed_json['items'][i]['view_count'];
                 var link = parsed_json['recipes'][i]['f2f_url'];
+		var img = parsed_json['recipes'][i]['image_url'];
                 recipeDisplay += "<ul>";
                 recipeDisplay += "<li>Title: "+title;
                 //recipeDisplay += "<li>Views: "+views;
                 recipeDisplay += "<li>Link: "+"<a href=\""+link+"\">"+link+"</a>";
+		recipeDisplay += "<li>" + "<img src=\"" + img + "\"height = \"100\" width = \"100\">";
                 recipeDisplay += "</ul>";
               }
               $("#searchResults").html(recipeDisplay);
